@@ -1,11 +1,5 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
-
 int main() {
     /*
     declarando as variaves 
@@ -22,17 +16,21 @@ int main() {
     char estado1;
     char codigo_carta1[4];
     char cidade1[50];
-    int populacao1, pontos_turisticos1;
+    unsigned long int populacao1; 
+    int pontos_turisticos1;
     float area1, pib1;
     float dens_pop1, pib_capita1; 
+    float super_poder1;
 
     //carta 2
     char estado2;
     char codigo_carta2[4];
     char cidade2[50];
-    int populacao2, pontos_turisticos2;
+    unsigned long int populacao2; 
+    int pontos_turisticos2;
     float area2, pib2;
     float dens_pop2, pib_capita2; 
+    float super_poder2;
 
     //Entrada de dados carta 1
     printf("Vamos cadastrar a Primeira Carta\n");
@@ -47,7 +45,7 @@ int main() {
     scanf("%s", cidade1);
 
     printf("Digite o número de habitantes da primeira cidade:\n");
-    scanf("%d", &populacao1);
+    scanf("%lu", &populacao1);
 
     printf("Digite a área da primeira cidade em quilômetros quadrados:\n");
     scanf("%f", &area1);
@@ -72,7 +70,7 @@ int main() {
     scanf("%s", cidade2);
 
     printf("Digite o número de habitantes da segunda cidade:\n");
-    scanf("%d", &populacao2);
+    scanf("%lu", &populacao2);
 
     printf("Digite a área da segunda cidade em quilômetros quadrados:\n");
     scanf("%f", &area2);
@@ -93,6 +91,15 @@ int main() {
     dens_pop2 = populacao2 / area2;
     pib_capita2 = pib2 / populacao2;
 
+    //Calculando super poder
+
+    //carta1
+    super_poder1 = ((float) populacao1) + area1 + pib1 + ((float) pontos_turisticos1) + pib_capita1 - dens_pop1;
+    //em populçao deveria ser float ou double? unsigned long é aplicavel para float ou apenas int e double? fazer a soma de float e double daria problema?
+    //carta2
+    super_poder2 = ((float) populacao2) + area2 + pib2 + ((float) pontos_turisticos2) + pib_capita2 - dens_pop2;
+
+    
     //Exibindo informações de cada carta
 
     //Carta1
@@ -100,7 +107,7 @@ int main() {
     printf("Estado: %c\n", estado1);
     printf("Código: %s\n", codigo_carta1);
     printf("Nome da Cidade: %s\n", cidade1);
-    printf("População: %d\n", populacao1);
+    printf("População: %lu\n", populacao1);
     printf("Área: %f\n", area1);
     printf("PIB: %f\n", pib1);
     printf("Número de Pontos Turísticos: %d\n", pontos_turisticos1);
@@ -112,12 +119,22 @@ int main() {
     printf("Estado: %c\n", estado2);
     printf("Código: %s\n", codigo_carta2);
     printf("Nome da Cidade: %s\n", cidade2);
-    printf("População: %d\n", populacao2);
+    printf("População: %lu\n", populacao2);
     printf("Área: %f\n", area2);
     printf("PIB: %f\n", pib2);
     printf("Número de Pontos Turísticos: %d\n", pontos_turisticos2);
     printf("Densidade populacional: %.2f\n", dens_pop2);
     printf("PIB per Capita: %.2f\n", pib_capita2);
+
+    //Comparando cada atributo
+    printf("** Resultados: 1 a Carta1 venceu, 0 a Carta2 venceu  **\n");
+    printf("Populaçao? %d\n", (populacao1 > populacao2));
+    printf("Área? %d\n", (area1 > area2));
+    printf("PIB? %d\n", (pib1 > pib2));
+    printf("Pontos Turísticos? %d\n", (pontos_turisticos1 > pontos_turisticos2));
+    printf("Densidade populacional? %d\n", (dens_pop1 < dens_pop2)); //ao contrário
+    printf("PIB per Capita? %d\n", (pib_capita1 > pib_capita2));
+    printf("Super Poder? %d\n", (super_poder1 > super_poder2));
 
     return 0;
 }
