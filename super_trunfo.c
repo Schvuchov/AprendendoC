@@ -94,10 +94,10 @@ int main() {
     //Calculando super poder
 
     //carta1
-    super_poder1 = ((float) populacao1) + area1 + pib1 + ((float) pontos_turisticos1) + pib_capita1 - dens_pop1;
+    super_poder1 = ((float) populacao1) + area1 + pib1 + ((float) pontos_turisticos1) + pib_capita1 + (1/ dens_pop1);
     //em populçao deveria ser float ou double? unsigned long é aplicavel para float ou apenas int e double? fazer a soma de float e double daria problema?
     //carta2
-    super_poder2 = ((float) populacao2) + area2 + pib2 + ((float) pontos_turisticos2) + pib_capita2 - dens_pop2;
+    super_poder2 = ((float) populacao2) + area2 + pib2 + ((float) pontos_turisticos2) + pib_capita2 + (1/ dens_pop2);
 
     
     //Exibindo informações de cada carta
