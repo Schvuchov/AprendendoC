@@ -245,7 +245,7 @@ int main() {
     }
 
     //comparação individual
-    printf("Comparação dos Atributos\n");
+    printf("**Comparação dos Atributos**\n");
 
     printf("%s -> %s: %.2f | %s: %.2f\n", atributo1, cidade1, valor1_attr1, cidade2, valor2_attr1);
     if (escolhaAtributo1 == 5){
@@ -265,7 +265,7 @@ int main() {
     soma2 = valor2_attr1 + valor2_attr2;
 
     //resultado
-    printf("Resultado Final\n");
+    printf("****Resultado Final****\n");
     printf("Soma dos atributos -> %s: %.2f | %s: %.2f\n", cidade1, soma1, cidade2, soma2);
 
     if (soma1 > soma2){
@@ -276,6 +276,6 @@ int main() {
         printf("Empate!\n");
     }
 
-    
+
     return 0;
 }
